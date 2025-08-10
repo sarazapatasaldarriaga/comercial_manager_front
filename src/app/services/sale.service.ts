@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-
-export interface Sale {
-  id?: number;
-  name: string;
-  price: number;
-}
+import { Client } from '../models/client.model';
+import { SaleItem } from '../models/saleItem.model';
+import { Sale } from '../models/sale.model'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SaleService {
 
-  private apiUrl = 'http://localhost:8081/api/sale';
+  private apiUrl = 'http://localhost:8081/api/sales';
 
   constructor(private http: HttpClient) {}
 

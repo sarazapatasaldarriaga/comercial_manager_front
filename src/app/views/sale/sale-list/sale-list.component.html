@@ -1,8 +1,8 @@
 <div class="container mt-4">
   <c-card class="shadow-sm">
     <c-card-header class="d-flex justify-content-between align-items-center">
-      <h4 class="mb-0">Lista de Productos</h4>
-      <button cButton color="primary" size="sm" (click)="goToCreate()">➕ Nuevo Producto</button>
+      <h4 class="mb-0">Lista de Ventas</h4>
+      <button cButton color="primary" size="sm" (click)="goToCreate()">➕ Nueva Venta</button>
     </c-card-header>
 
     <c-card-body>
@@ -10,19 +10,19 @@
         <thead class="table-dark">
           <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Precio</th>
+            <th>Fecha</th>
+            <th>Nombre del cliente</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let p of products">
+          <tr *ngFor="let p of sales">
             <td>{{ p.id }}</td>
-            <td>{{ p.name }}</td>
-            <td>{{ p.price | currency:'USD' }}</td>
+            <td>{{ p.date | date: 'dd MMMM yyyy' : '':'es-ES' }}</td>
+            <td>{{ p.client.name }}</td>
           </tr>
         </tbody>
       </table>
-      <div *ngIf="products.length === 0" class="text-center text-muted mt-3">
+      <div *ngIf="sales.length === 0" class="text-center text-muted mt-3">
         No hay productos disponibles.
       </div>
     </c-card-body>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule, CurrencyPipe, NgFor } from '@angular/common';
-import { SaleService, Sale } from '../../../services/sale.service';
+import { SaleService } from '../../../services/sale.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
+import { Sale } from '../../../models/sale.model';
 
 // ✅ CoreUI imports
 import { CardModule, TableModule, ButtonModule } from '@coreui/angular';

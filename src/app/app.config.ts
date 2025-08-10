@@ -12,9 +12,16 @@ import {
 import { DropdownModule, SidebarModule } from '@coreui/angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { routes } from './app.routes';
+import { LOCALE_ID } from '@angular/core';
 
 // 👇 Importa el HttpClient
 import { provideHttpClient } from '@angular/common/http';
+
+// 👇 Importa y registra locale español
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+registerLocaleData(localeEs);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -35,6 +42,8 @@ export const appConfig: ApplicationConfig = {
     IconSetService,
     provideAnimationsAsync(),
     // 👇 Agrega aquí el HttpClient
-    provideHttpClient()
+    provideHttpClient(),
+    // 👇 Agrega el provider para locale
+    { provide: LOCALE_ID, useValue: 'es-ES' }
   ]
 };
