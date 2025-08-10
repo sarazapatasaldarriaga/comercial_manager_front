@@ -1,0 +1,34 @@
+<c-card>
+  <c-card-header>
+    <strong>Nuevo Producto</strong>
+  </c-card-header>
+  <c-card-body>
+    <form (ngSubmit)="saveProduct()" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Nombre</label>
+        <input type="text" [(ngModel)]="product.name" name="name" class="form-control" required>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Precio</label>
+        <input type="number" [(ngModel)]="product.price" name="price" class="form-control" required>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Stock</label>
+        <input type="number" [(ngModel)]="product.stock" name="stock" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Proveedor</label>
+        <select [(ngModel)]="product.supplier.id" name="supplierId" class="form-select" required>
+          <option value="">Seleccione un proveedor</option>
+          <option *ngFor="let sup of suppliers" [value]="sup.id">
+            {{ sup.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-12 d-flex justify-content-end">
+        <button type="submit" class="btn btn-success me-2">💾 Guardar</button>
+        <button type="button" class="btn btn-secondary" >Cancelar</button>
+      </div>
+    </form>
+  </c-card-body>
+</c-card>
