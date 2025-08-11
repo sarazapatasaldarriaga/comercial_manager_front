@@ -9,7 +9,7 @@ import { Client } from '../models/client.model';
 @Injectable({
   providedIn: 'root'
 })
-export class Clientervice {
+export class ClientService {
 
   private apiUrl = 'http://localhost:8081/api/client';
 
@@ -19,8 +19,13 @@ export class Clientervice {
     return this.http.get<Client[]>(`${this.apiUrl}/list`);
   }
   saveSale(client: Client) {
-  return this.http.post(`${this.apiUrl}/save`, client);
-}
+    return this.http.post(`${this.apiUrl}/save`, client);
+  }
+
+  getCountClients(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/count`);
+  }
+  
 
 
 }

@@ -21,5 +21,8 @@ export class SaleService {
   return this.http.post(`${this.apiUrl}/save`, sale);
 }
 
+getCountSale(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/count`);
+  }
 
 }

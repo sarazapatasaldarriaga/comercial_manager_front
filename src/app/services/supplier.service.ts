@@ -8,11 +8,15 @@ import { Supplier } from '../models/supplier.model';
 })
 export class SupplierService {
 
-  private apiUrl = 'http://localhost:8081/api/supplier/list';
+  private apiUrl = 'http://localhost:8081/api/supplier';
 
   constructor(private http: HttpClient) {}
 
   getSuppliers(): Observable<Supplier[]> {
-    return this.http.get<Supplier[]>(this.apiUrl);
+    return this.http.get<Supplier[]>(`${this.apiUrl}/list`);
+  }
+
+  getCountSupplier(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/count`);
   }
 }

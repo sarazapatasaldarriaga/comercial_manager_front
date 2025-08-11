@@ -23,7 +23,11 @@ export class ProductService {
   }
   saveProduct(product: Product) {
   return this.http.post(`${this.apiUrl}/save`, product);
-}
+
+  }
+   getCountProduct(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/count`);
+  }
 
 
 }
