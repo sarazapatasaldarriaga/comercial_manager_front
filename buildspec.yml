@@ -18,4 +18,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist/sara-front'
+  base-directory: 'dist/coreui-free-angular-admin-template'
