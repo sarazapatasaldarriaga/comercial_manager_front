@@ -17,5 +17,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'dist/coreui-free-angular-admin-template'
+    - 'dist/coreui-free-angular-admin-template/**/*'
+  base-directory: '.'
