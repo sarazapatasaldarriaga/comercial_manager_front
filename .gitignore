@@ -44,3 +44,13 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# PNPM
+pnpm-lock.yaml
+
+# Terraform
+.terraform.lock.hcl
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars

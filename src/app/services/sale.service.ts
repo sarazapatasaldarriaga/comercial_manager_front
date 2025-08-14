@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { Client } from '../models/client.model';
 import { SaleItem } from '../models/saleItem.model';
 import { Sale } from '../models/sale.model'
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SaleService {
 
-  private apiUrl = 'http://localhost:8081/api/sales';
+  private apiUrl = `${environment.apiUrl}/api/sales`;
 
   constructor(private http: HttpClient) {}
 

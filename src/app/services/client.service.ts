@@ -2,30 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Client } from '../models/client.model';
-
-
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  private apiUrl = 'http://localhost:8081/api/client';
+  private apiUrl = `${environment.apiUrl}/clients`;
 
   constructor(private http: HttpClient) {}
 
-  getSales(): Observable<Client[]> {
+  getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(`${this.apiUrl}/list`);
   }
-  saveSale(client: Client) {
+
+  saveClient(client: Client): Observable<any> {
     return this.http.post(`${this.apiUrl}/save`, client);
   }
 
-  getCountClients(): Observable<number> {
+  countClients(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/count`);
   }
-  
-
-
 }

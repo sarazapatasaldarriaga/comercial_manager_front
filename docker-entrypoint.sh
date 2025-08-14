@@ -6,7 +6,7 @@
 
 if [ -f /usr/share/nginx/html/assets/env.js ]; then
   echo "Replacing environment variables in env.js"
-  sed -i "s|__BACKEND_API_URL__|$BACKEND_API_URL|g" /usr/share/nginx/html/assets/env.js
+  sed -i "s|__API_ENDPOINT_URL__|$API_ENDPOINT_URL|g" /usr/share/nginx/html/assets/env.js
 else
   echo "env.js not found at /usr/share/nginx/html/assets/env.js"
 fi

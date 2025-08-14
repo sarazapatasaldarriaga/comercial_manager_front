@@ -14,7 +14,7 @@ RUN npm run build --configuration production
 FROM public.ecr.aws/mcr-public/nginx:latest-alpine
 
 # Copy the built Angular app from the build stage
-COPY --from=build /app/dist/sara-front /usr/share/nginx/html
+COPY --from=build /app/dist/coreui-free-angular-admin-template /usr/share/nginx/html
 
 # Copy the env.js placeholder
 COPY src/assets/env.js /usr/share/nginx/html/assets/env.js

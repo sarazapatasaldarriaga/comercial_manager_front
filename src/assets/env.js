@@ -1,3 +1,3 @@
 window.env = {
-  BACKEND_API_URL: "__BACKEND_API_URL__"
+  API_ENDPOINT_URL: "__API_ENDPOINT_URL__"
 };

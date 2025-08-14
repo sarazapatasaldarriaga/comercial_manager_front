@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Supplier } from '../models/supplier.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SupplierService {
 
-  private apiUrl = 'http://localhost:8081/api/supplier';
+  private apiUrl = `${environment.apiUrl}/suppliers`;
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +17,7 @@ export class SupplierService {
     return this.http.get<Supplier[]>(`${this.apiUrl}/list`);
   }
 
-  getCountSupplier(): Observable<number> {
+  countSuppliers(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/count`);
   }
 }
