@@ -29,7 +29,7 @@ import {
 @Component({
   selector: 'app-widgets-dropdown',
    templateUrl: './widgets-dropdown.component.html',
-    imports: [RowComponent, ColComponent, WidgetStatAComponent, TemplateIdDirective, IconDirective, DropdownComponent, ButtonDirective, DropdownToggleDirective, DropdownMenuDirective, DropdownItemDirective, RouterLink, DropdownDividerDirective, ChartjsComponent]
+    imports: [RowComponent, ColComponent, WidgetStatAComponent, TemplateIdDirective, IconDirective, DropdownComponent, ButtonDirective, DropdownToggleDirective, DropdownMenuDirective, DropdownItemDirective, RouterLink, ChartjsComponent]
 
 })
 export class WidgetsDropdownComponent implements OnInit {
@@ -62,11 +62,11 @@ export class WidgetsDropdownComponent implements OnInit {
     this.loadingProducts = true;
     this.errorProducts = null;
     this.productService.getCountProduct().subscribe({
-      next: (data) => {
+      next: (data: number) => {
         this.productCount = data;
         this.loadingProducts = false;
       },
-      error: (err) => {
+      error: (err: any) => {
         this.errorProducts = 'Error cargando productos';
         this.loadingProducts = false;
       }
@@ -76,8 +76,8 @@ export class WidgetsDropdownComponent implements OnInit {
   loadClients(): void {
     this.loadingClients = true;
     this.errorClients = null;
-    this.clientService.getCountClients().subscribe({
-      next: (data) => {
+    this.clientService.countClients().subscribe({
+      next: (data: number) => {
         this.clientstCount = data;
         this.loadingClients = false;
       },
@@ -90,8 +90,8 @@ export class WidgetsDropdownComponent implements OnInit {
   loadSupplier(): void {
     this.loadingClients = true;
     this.errorClients = null;
-    this.supplierService.getCountSupplier().subscribe({
-      next: (data) => {
+    this.supplierService.countSuppliers().subscribe({
+      next: (data: number) => {
         this.supplierCount = data;
         this.loadingClients = false;
       },
@@ -105,7 +105,7 @@ export class WidgetsDropdownComponent implements OnInit {
     this.loadingClients = true;
     this.errorClients = null;
     this.saleService.getCountSale().subscribe({
-      next: (data) => {
+      next: (data: number) => {
         this.saleCount = data;
         this.loadingClients = false;
       },

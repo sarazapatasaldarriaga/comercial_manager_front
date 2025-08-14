@@ -14,7 +14,6 @@ import { CardModule, TableModule, ButtonModule } from '@coreui/angular';
   imports: [
     CommonModule,
     NgFor,
-    CurrencyPipe,
     HttpClientModule,
     RouterModule,
     CardModule, // ✅ Tarjetas
