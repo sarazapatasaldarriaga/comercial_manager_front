@@ -48,9 +48,7 @@ Thumbs.db
 # PNPM
 pnpm-lock.yaml
 
-# Terraform
-.terraform.lock.hcl
-**/.terraform/*
-*.tfstate
-*.tfstate.*
-*.tfvars
+### Terraform ###
+**/.terraform*
+**/terraform.tfvars
+**/terraform.tfstate*
