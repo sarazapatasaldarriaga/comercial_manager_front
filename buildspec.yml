@@ -12,10 +12,11 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build --configuration production --aot
+      - sed -i "s|__API_ENDPOINT_URL__|$API_ENDPOINT_URL|" dist/coreui-free-angular-admin-template/main-*.js
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - 'dist/coreui-free-angular-admin-template/**/*'
-  base-directory: '.'
+    - '**/*'
+  base-directory: 'dist/coreui-free-angular-admin-template'
