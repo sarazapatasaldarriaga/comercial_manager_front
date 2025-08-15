@@ -11,7 +11,13 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo "export const environment = {\n  production: true,\n  apiUrl: '$API_ENDPOINT_URL'\n};" > src/environments/environment.prod.ts
+      - |
+        cat <<EOF > src/environments/environment.prod.ts
+        export const environment = {
+          production: true,
+          apiUrl: '$API_ENDPOINT_URL'
+        };
+        EOF
       - ng build --configuration production --aot
   post_build:
     commands:
