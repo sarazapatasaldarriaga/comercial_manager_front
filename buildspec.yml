@@ -12,7 +12,8 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build --configuration production --aot
-      - sed -i "s|__API_ENDPOINT_URL__|$API_ENDPOINT_URL|" dist/coreui-free-angular-admin-template/main-*.js
+      - MAIN_JS_FILE=$(find dist/coreui-free-angular-admin-template -name "main-*.js")
+      - sed -i "s|__API_ENDPOINT_URL__|$API_ENDPOINT_URL|" $MAIN_JS_FILE
   post_build:
     commands:
       - echo Build completed on `date`
