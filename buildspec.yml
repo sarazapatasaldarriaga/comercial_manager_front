@@ -14,7 +14,7 @@ phases:
       - ng build --configuration production --aot
       - ls -l dist/coreui-free-angular-admin-template
       - MAIN_JS_FILE=$(find dist/coreui-free-angular-admin-template -name "main-*.js")
-      - echo "Main JS file found: $MAIN_JS_FILE"
+      - echo "Main JS file found $MAIN_JS_FILE"
       - sed -i "s|__API_ENDPOINT_URL__|$API_ENDPOINT_URL|" $MAIN_JS_FILE
   post_build:
     commands:
